@@ -1,0 +1,120 @@
+{
+    "version": 1,
+    "name": "AscensorControls",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "5124dd5d-69dc-4aea-8b23-f6a64d113ff6",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "44acef01-e1d1-48d8-81d7-b5977585a1ba",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "MoverAscensor",
+                    "type": "Button",
+                    "id": "60cb0df4-d3de-4f58-a900-5649a28fd180",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Limpieza",
+                    "type": "Button",
+                    "id": "9ef5584b-7359-4cce-a155-eb88ed4b2484",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Polea",
+                    "type": "Button",
+                    "id": "a304202e-259d-49a7-bdaf-54f720aac199",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Puerta",
+                    "type": "Button",
+                    "id": "7359a86e-fe27-4be3-9bb8-f2244ec758d3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0091dff6-3c13-4d36-adc4-584213e0628b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d9c1cdc-48c2-4015-8622-df213962370f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoverAscensor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1957ef32-c60f-4637-bab6-1df19fa101aa",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Limpieza",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0ce0c34-73ae-487b-8eb9-7ab59d8b7388",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Polea",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41f684cd-5a6c-420d-a5c6-7f3f1b7a434b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Puerta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -2,18 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Grafiti
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - FloatingText
   - Water
   - UI
-  - 
-  - 
-  - 
+  - asd
+  - Fondo
+  - Objeto
   - 
   - 
   - 
@@ -38,6 +39,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fondo
+    uniqueID: 2119272475
+    locked: 0
+  - name: Ascensor
+    uniqueID: 1036258943
+    locked: 0
+  - name: Grafiti
+    uniqueID: 597779983
+    locked: 0
+  - name: Pasajeros
+    uniqueID: 741789449
+    locked: 0
+  - name: UI
+    uniqueID: 1714165039
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FloatingLayer
+    uniqueID: 3326669711
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  m_MigratedRenderPipelines: []
