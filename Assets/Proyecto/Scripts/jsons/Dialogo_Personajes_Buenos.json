@@ -1,0 +1,54 @@
+{
+  "pasajerosBondadosos": [
+    {
+      "id": "camila_vecina",
+      "nombre": "Camila",
+      "dialogos": [
+        "Hola... Me alegra tanto verte aquí arriba. Tenía miedo de que el carro cerrara tras lo de tu papá.",
+        "Se nota que le estás poniendo empeño. Tu viejo estaría orgulloso de verte sostener el puesto.",
+        "Ten esto. te va a ayudar a empezar en esto. No es mucho, pero es algo."
+      ],
+      "dineroExtra": 1350
+    },
+    {
+      "id": "jordanmusicyt",
+      "nombre": "Jordan (YouTuber)",
+      "dialogos": [
+        "¡Qué tal, mi gente! Estamos subiendo por una de las joyas patrimoniales más auténticas de todo el puerto.",
+        "Oye, hermano, qué tremenda máquina... y qué pega te mandas cuidándola tú solo acá arriba.",
+        "Toma, déjate esto para la mantención de parte de la comunidad del canal. ¡El patrimonio no se cae!"
+      ],
+      "dineroExtra": 1650
+    },
+    {
+      "id": "don_luis",
+      "nombre": "Don Luis",
+      "dialogos": [
+        "Buenas tardes, muchacho. Estaba escuchando el motor mientras subíamos; suena bien afinado.",
+        "Conocí a tu viejo en la maestranza. Él sabía sacarle lustre a estas poleas cuando nadie daba un peso por ellas.",
+        "Guárdate esto para un tarro de grasa o un juego de zapatas. La sal marina no perdona en este puerto."
+      ],
+      "dineroExtra": 1450
+    },
+    {
+      "id": "javier_repartidor",
+      "nombre": "Javier (Repartidor)",
+      "dialogos": [
+        "Uff, buenas tardes compa... Gracias por esperar que subiera con la mochila, me salvaste las piernas.",
+        "Subir esta quebrada pedaleando con pedidos pesados te liquida la espalda. Si este carro no estuviera, mi jornada se duplica.",
+        "Déjate esto de propina. Todo lo que sirva para que los rieles sigan firmes se agradece con el alma."
+      ],
+      "dineroExtra": 1300
+    },
+    {
+      "id": "delilah_y_papa",
+      "nombre": "Delilah y su papá",
+      "dialogos": [
+        "Delilah: ¡Mira, papá, allá abajo se ven los barcos chiquititos! ¿Podemos subirnos todos los días?",
+        "Papá: Buenas tardes, vecino. A mi hija le fascina este carro; cada vez que bajamos al plan me pide esperarlo. Gracias por cuidarlo tan bien.",
+        "Papá: Toma, Delilah, pásale las monedas al caballero... Esto es para que siga comprando repuestos para el carro, muchacho. Se agradece."
+      ],
+      "dineroExtra": 1450
+    }
+  ]
+}
