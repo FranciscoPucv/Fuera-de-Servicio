@@ -1,0 +1,40 @@
+{
+  "dialogos": [
+   
+    {
+      "id": "resumen_dia_1",
+      "lineas": [
+        {
+          "hablante": "Narrador",
+          "texto": "Terminó tu primer día. Veamos cómo te fue...",
+          "imagen": ""
+        },
+        {
+          "hablante": "Resumen del día",
+          "texto": "💰 Dinero ganado hoy: ${dineroGanado}",
+          "imagen": ""
+        },
+        {
+          "hablante": "Resumen del día",
+          "texto": "👥 Pasajeros transportados: {pasajerosTransportados}",
+          "imagen": ""
+        },
+        {
+          "hablante": "Resumen del día",
+          "texto": "⚠️ Eventos ocurridos: {eventos}",
+          "imagen": ""
+        },
+        {
+          "hablante": "Resumen del día",
+          "texto": "🎨 Grafitis en el ascensor: {grafitis}",
+          "imagen": ""
+        },
+        {
+          "hablante": "Narrador",
+          "texto": "Tu dinero total es: ${dineroTotal}",
+          "imagen": ""
+        }
+      ]
+    }
+  ]
+}

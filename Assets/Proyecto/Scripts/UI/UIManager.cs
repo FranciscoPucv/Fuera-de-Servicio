@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+
         gameData = GameManager.Instance.gameData;
 
       

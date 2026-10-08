@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -97,4 +97,4 @@ public class LimpiezaManager : MonoBehaviour
         Debug.Log($"Eliminando grafiti: {elegido.name}");
         Destroy(elegido.gameObject);
     }
-}
+}*/

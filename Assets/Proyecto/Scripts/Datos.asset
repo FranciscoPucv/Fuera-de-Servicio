@@ -12,17 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58019d5b30c4ec94e84acdfdfc91bc21, type: 3}
   m_Name: Datos
   m_EditorClassIdentifier: Assembly-CSharp::GameData
-  pasajerosTotales: 0
-  dineroTotal: 0
+  pasajerosTotales: 10
+  dineroTotal: 230
   capacidadMaxima: 10
   contadorPopularidad: 50
-  contadorLimpieza: 100
-  contadorPolea: 100
-  contadorPuerta: 100
+  contadorLimpieza: 87.6
+  contadorPolea: 90
+  contadorPuerta: 48.6
   spawnBase: 2
   pagoPorPasajero: 10
-  probabilidadPago: 0.5
-  horaActual: 8
+  probabilidadPago: 1
+  horaActual: 10
   climaActual: 0
-  eventoOcurriendo: 0
-  ascensorEnMovimiento: 0
+  eventoOcurriendo: 1
+  ascensorEnMovimiento: 1
+  resumenNocheMostrado: 1
+  resumenDia:
+    dineroInicioDia: 230
+    pasajerosInicioDia: 10
+    limpiezaInicioDia: 80
+    poleaInicioDia: 90
+    puertaInicioDia: 17.2
+    eventosOcurridos: 0
+    basuraTirada: 0
+    grafitisHechos: 0
+    pasajerosTotalesTransportados: 0
+    dineroFinDia: 230
+    pasajerosFinDia: 10
+  estadoTienda:
+    mejorasCompradas: []
+    consumiblesIds: []
+    consumiblesCantidades: 

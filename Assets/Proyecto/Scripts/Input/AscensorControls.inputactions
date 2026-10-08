@@ -55,6 +55,16 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "resolver",
+                    "type": "Button",
+                    "id": "9815204f-e8aa-4302-ad22-779a42157894",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -110,6 +120,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Puerta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80bd4c1c-87f8-466a-b55d-67c470ff07e3",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "resolver",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

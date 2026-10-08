@@ -1,0 +1,29 @@
+{
+  "dialogos": [
+    {
+      "id": "introduccion",
+      "lineas": [
+        {
+          "hablante": "Narrador",
+          "texto": "Tu padre siempre decía que este ascensor era el corazón de la quebrada.",
+          "imagen": ""
+        },
+        {
+          "hablante": "Narrador",
+          "texto": "Ahora que él ya no está, te toca a ti mantenerlo funcionando.",
+          "imagen": ""
+        },
+        {
+          "hablante": "Tú",
+          "texto": "No voy a dejar que se caiga. Por él. Por los vecinos.",
+          "imagen": ""
+        },
+        {
+          "hablante": "Narrador",
+          "texto": "Tu objetivo es simple: llevar pasajeros, mantener el ascensor, y pagar las cuentas al final del día.",
+          "imagen": ""
+        }
+      ]
+    }
+  ]
+}

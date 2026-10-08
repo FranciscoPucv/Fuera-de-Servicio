@@ -3,8 +3,8 @@
 public class StatusManager : MonoBehaviour
 {
  
-    public float intervaloLimpeza = 10f;
-    public float intervaloPolea = 15f;
+    public float intervaloLimpeza = 30f;
+    public float intervaloPolea = 100f;
 
   
     public float decrementoLimpieza = 5f;

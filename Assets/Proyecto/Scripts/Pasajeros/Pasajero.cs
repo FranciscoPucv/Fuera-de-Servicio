@@ -12,13 +12,12 @@ public enum EstadoPasajero
 
 public enum RolPasajero
 {
-    SubeEnInicio,   
-    SubeEnFinal    
+    SubeEnInicio,
+    SubeEnFinal
 }
 
 public class Pasajero : MonoBehaviour
 {
-   
     public float velocidadMovimiento = 3f;
     public int puntosQueOtorga = 10;
 
@@ -26,24 +25,33 @@ public class Pasajero : MonoBehaviour
     public RolPasajero rol = RolPasajero.SubeEnInicio;
 
     private Transform spawnOrigen;
-    private AscensorController ascensor;
+    private AscensorManager ascensorManager;
     private Vector3 posicionObjetivo;
+    private Vector3 offsetInterior; 
+    private bool inicializado = false;
+    private int ascensorIndex = 0;
+    private bool yaRegistrado = false;
 
+    public Action<Pasajero> OnPasajeroTerminado;
 
-    public void Inicializar(Transform spawn, RolPasajero rolAsignado, AscensorController asc)
+   
+    public void Inicializar(Transform spawn, RolPasajero rolAsignado, int index, AscensorManager manager)
     {
         spawnOrigen = spawn;
         rol = rolAsignado;
-        ascensor = asc;
+        ascensorIndex = index;
+        ascensorManager = manager;
 
         transform.position = spawn.position;
         estado = EstadoPasajero.EsperandoEnAnden;
-
-        Debug.Log($" {gameObject.name} creado en {spawn.name}, rol: {rol}");
+        inicializado = true;
     }
 
     private void Update()
     {
+        if (!inicializado) return;
+        if (ascensorManager == null) return;
+
         switch (estado)
         {
             case EstadoPasajero.EsperandoEnAnden: ProcesarEspera(); break;
@@ -52,7 +60,103 @@ public class Pasajero : MonoBehaviour
             case EstadoPasajero.Bajando: ProcesarBajada(); break;
         }
     }
-    public Action<Pasajero> OnPasajeroTerminado;
+
+    
+    private void ProcesarEspera()
+    {
+        bool ascensorEstaAbajo = ascensorManager.EstaAbajo(ascensorIndex);
+        bool ascensorEnMovimiento = ascensorManager.ascensores[ascensorIndex].enMovimiento;
+
+        bool ascensorEnMiLugar = (rol == RolPasajero.SubeEnInicio && ascensorEstaAbajo)
+                              || (rol == RolPasajero.SubeEnFinal && !ascensorEstaAbajo);
+
+        if (ascensorEnMiLugar && !ascensorEnMovimiento)
+        {
+            IniciarSubida();
+        }
+    }
+
+   
+    private void IniciarSubida()
+    {
+        estado = EstadoPasajero.Subiendo;
+
+      
+        offsetInterior = new Vector3(
+            UnityEngine.Random.Range(-0.15f, 0.15f),
+            UnityEngine.Random.Range(-0.1f, 0.1f),
+            0
+        );
+    }
+
+    private void ProcesarSubida()
+    {
+      
+        Transform puntoInterior = ascensorManager.ascensores[ascensorIndex].puntoInterior;
+        if (puntoInterior != null)
+        {
+            posicionObjetivo = puntoInterior.TransformPoint(offsetInterior);
+        }
+
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            posicionObjetivo,
+            velocidadMovimiento * Time.deltaTime
+        );
+
+        if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
+        {
+            transform.SetParent(ascensorManager.ascensores[ascensorIndex].ascensorTransform);
+
+            transform.localPosition = new Vector3(offsetInterior.x, offsetInterior.y, -0.1f);
+
+            estado = EstadoPasajero.DentroDelAscensor;
+            GameManager.Instance.PasajeroSubio();
+
+            if (!yaRegistrado)
+            {
+                yaRegistrado = true;
+                GameManager.Instance.gameData.resumenDia.RegistrarPasajeroTransportado();
+            }
+        }
+    }
+
+    private void ProcesarViaje()
+    {
+        bool ascensorEstaAbajo = ascensorManager.EstaAbajo(ascensorIndex);
+        bool ascensorEnMovimiento = ascensorManager.ascensores[ascensorIndex].enMovimiento;
+
+        bool ascensorEnMiDestino = (rol == RolPasajero.SubeEnInicio && !ascensorEstaAbajo)
+                                || (rol == RolPasajero.SubeEnFinal && ascensorEstaAbajo);
+
+        if (ascensorEnMiDestino && !ascensorEnMovimiento)
+        {
+            IniciarBajada();
+        }
+    }
+
+    private void IniciarBajada()
+    {
+        estado = EstadoPasajero.Bajando;
+        transform.SetParent(null);
+
+        Transform puntoSalida = ascensorManager.ObtenerPuntoSalida(ascensorIndex);
+
+        if (puntoSalida != null)
+        {
+           
+            float offsetY = UnityEngine.Random.Range(-0.3f, 0.3f);
+            posicionObjetivo = puntoSalida.position + new Vector3(0, offsetY, 0);
+        }
+        else
+        {
+            
+            Vector2 direccionAleatoria = UnityEngine.Random.insideUnitCircle.normalized;
+            posicionObjetivo = transform.position + (Vector3)(direccionAleatoria * 1.5f);
+           
+        }
+
+    }
 
     private void ProcesarBajada()
     {
@@ -64,76 +168,11 @@ public class Pasajero : MonoBehaviour
 
         if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
         {
-            GameManager.Instance.PasajeroCompleto();
-            Debug.Log($"{gameObject.name} completó su viaje");
+            GameManager.Instance.PasajeroCompleto();          
             estado = EstadoPasajero.Terminado;
 
             OnPasajeroTerminado?.Invoke(this);
-
             Destroy(gameObject, 0.3f);
         }
     }
-
-    private void ProcesarEspera()
-    {
-        
-        bool ascensorEnMiLugar = (rol == RolPasajero.SubeEnInicio && ascensor.estaAbajo)
-                              || (rol == RolPasajero.SubeEnFinal && !ascensor.estaAbajo);
-
-        if (ascensorEnMiLugar && !ascensor.enMovimiento)
-        {
-            IniciarSubida();
-        }
-    }
-
-    private void IniciarSubida()
-    {
-        estado = EstadoPasajero.Subiendo;
-        posicionObjetivo = ascensor.ObtenerPosicionInterior();
-        Debug.Log($" {gameObject.name} subiendo al ascensor");
-    }
-
-    private void ProcesarSubida()
-    {
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            posicionObjetivo,
-            velocidadMovimiento * Time.deltaTime
-        );
-
-        if (Vector3.Distance(transform.position, posicionObjetivo) < 0.1f)
-        {
-            transform.SetParent(ascensor.transform);
-            estado = EstadoPasajero.DentroDelAscensor;
-
-            GameManager.Instance.PasajeroSubio();
-
-            Debug.Log($" {gameObject.name} entró al ascensor");
-        }
-    }
-
-    private void ProcesarViaje()
-    {
-        bool ascensorEnMiDestino = (rol == RolPasajero.SubeEnInicio && !ascensor.estaAbajo)
-                                || (rol == RolPasajero.SubeEnFinal && ascensor.estaAbajo);
-
-        if (ascensorEnMiDestino && !ascensor.enMovimiento)
-        {
-            IniciarBajada();
-        }
-    }
-
-    private void IniciarBajada()
-    {
-        estado = EstadoPasajero.Bajando;
-        transform.SetParent(null);
-        posicionObjetivo = transform.position + new Vector3(
-             1f,
-           0.5f
-        );
-        Debug.Log($" {gameObject.name} bajando del ascensor");
-    }
-
-    
-
 }

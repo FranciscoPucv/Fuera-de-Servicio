@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "aceite",
+      "nombre": "Aceite de engranajes",
+      "precio": 1350,
+      "descripcion": "Necesario cuando la suciedad o el uso forzado resecan las poleas. Evita que el motor se sobrecaliente el doble de rápido durante la subida.",
+      "esMejoraUnica": false
+    },
+    {
+      "id": "letrero",
+      "nombre": "Letrero informativo",
+      "precio": 1650,
+      "descripcion": "Letrero de convivencia que concientiza a los pasajeros. Reduce la frecuencia con la que los escolares intentan rayar las paredes de la cabina.",
+      "esMejoraUnica": true
+    },
+    {
+      "id": "frenos",
+      "nombre": "Freno Reforzado",
+      "precio": 1500,
+      "descripcion": "Mejora el sistema de detención mecánica. Facilita la sincronización con el andén inferior, dando un margen de tiempo más amplio para frenar.",
+      "esMejoraUnica": true
+    },
+    {
+      "id": "malla",
+      "nombre": "Malla protectora de rieles",
+      "precio": 220,
+      "descripcion": "Reduce en un 70% la probabilidad de que la basura pesada arrojada desde la calle caiga directamente en las poleas motrices de la quebrada.",
+      "esMejoraUnica": true
+    },
+    {
+      "id": "cristal",
+      "nombre": "Reemplazo de cristal",
+      "precio": 100,
+      "descripcion": "Repara ventanas trizadas por pedradas o ampolletas quemadas. Sin luz o con vidrios rotos, la gente siente peligro y baja drásticamente la afluencia de pasajeros.",
+      "esMejoraUnica": false
+    },
+    {
+      "id": "kit_limpieza",
+      "nombre": "Kit de limpieza",
+      "precio": 150,
+      "descripcion": "Bolsas y artículos para barrer colillas, latas y papeles del piso antes de cerrar el turno. Evita que los pasajeros tiren más basura por imitación.",
+      "esMejoraUnica": false
+    },
+    {
+      "id": "lija_barniz",
+      "nombre": "Lija y barniz",
+      "precio": 100,
+      "descripcion": "Borra los tags y rayones de plumón o cuchillo en la madera. Mantiene la confianza de los vecinos y evita que al día siguiente aparezcan nuevos rayones.",
+      "esMejoraUnica": false
+    },
+    {
+      "id": "repuesto",
+      "nombre": "Repuesto de freno",
+      "precio": 150,
+      "descripcion": "Reemplaza la zapata desgastada por paradas de emergencia o frenados bruscos. Evita que la barra verde de frenado se vuelva diminuta y errática.",
+      "esMejoraUnica": false
+    }
+  ]
+}

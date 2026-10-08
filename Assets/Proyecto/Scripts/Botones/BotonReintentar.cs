@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
@@ -21,4 +21,4 @@ public class BotonReintentar : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-}
+}*/
